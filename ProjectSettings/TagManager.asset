@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Aramacer
+  - Item
+  - DoAction
+  - fin
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Interact
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: TransparentFX
+    uniqueID: 420260369
+    locked: 0
+  - name: Ignore Raycast
+    uniqueID: 141411509
+    locked: 0
+  - name: Water
+    uniqueID: 2310140395
+    locked: 0
+  - name: UI
+    uniqueID: 3927804639
+    locked: 0
+  - name: Intercat
+    uniqueID: 3498585717
+    locked: 0
