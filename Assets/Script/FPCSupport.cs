@@ -100,7 +100,7 @@ public class FPCSupport : MonoBehaviour
         {
             DialogueBox = GameObject.Find("DialogueBox");
         }
-        DialogueBox.SetActive(true);
+        DialogueBox.SetActive(false);
 
         
 
@@ -321,7 +321,7 @@ public void JeQuitteLeJeu()
     {
         //gere l'inventaire et le joueur.
         inventoryCanvas.SetActive(!inventoryOn);
-        DialogueBox.SetActive(inventoryOn);
+        //DialogueBox.SetActive(inventoryOn);
         
         blur.enabled = !inventoryOn;
         fpsComp.enabled = inventoryOn; //fonctionne de façon désinchroniser car il est true au debut et il deveindra false après.
@@ -388,6 +388,10 @@ public void JeQuitteLeJeu()
             Debug.Log("Fin");
             JeQuitteLeJeu();
 
+        }
+        if(other.gameObject.tag == "personnage")
+        {
+            DialogueBox.setActif(false);
         }
         
     }
