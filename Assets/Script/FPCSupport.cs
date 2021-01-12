@@ -52,12 +52,12 @@ public class FPCSupport : MonoBehaviour
     public GameObject InventoryItemOptions;
 
     [Header("dialogue")]
-    private Dialogue dialogue;
+    public Dialogue dialogue;
     public GameObject DialogueBox;
 
     public string Fin;
     public bool finito=false;
-    
+
 
     void Start()
     {
@@ -99,12 +99,12 @@ public class FPCSupport : MonoBehaviour
         if (DialogueBox == null)
         {
             DialogueBox = GameObject.Find("DialogueBox");
+
         }
-        DialogueBox.SetActive(false);
-
+        DialogueBox.SetActive(false); 
         
-
         
+    
     }
    
 
@@ -389,12 +389,12 @@ public void JeQuitteLeJeu()
             JeQuitteLeJeu();
 
         }
-        if(other.gameObject.tag == "personnage")
+        if (other.gameObject.tag == "personnage")
         {
-            DialogueBox.setActif(false);
+            DialogueBox.SetActive(true);
         }
         
-    }
+        }
 
 
 }
