@@ -1392,8 +1392,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.344131e-17, y: -3.0112023e+36, z: -3.0316488e-13,
-    w: -6.358157e-28}
+  m_BoundingSphereOverride: {x: 2.143e-42, y: 1.02e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -9846,7 +9845,7 @@ GameObject:
   - component: {fileID: 525228179834139554}
   m_Layer: 8
   m_Name: clededingo
-  m_TagString: Item
+  m_TagString: Cle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10400,7 +10399,7 @@ GameObject:
   - component: {fileID: 6402875787167352597}
   m_Layer: 8
   m_Name: Cle de Mickey
-  m_TagString: Item
+  m_TagString: Cle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

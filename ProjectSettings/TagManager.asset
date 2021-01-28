@@ -9,6 +9,7 @@ TagManager:
   - DoAction
   - fin
   - personnage
+  - Cle
   layers:
   - Default
   - TransparentFX

@@ -164,6 +164,8 @@ public void JeQuitteLeJeu()
             
         }
 
+
+
        
 
 
@@ -393,8 +395,10 @@ public void JeQuitteLeJeu()
         {
             DialogueBox.SetActive(true);
         }
-        
-        }
+       
+    }
+
+   
 
 
 }
