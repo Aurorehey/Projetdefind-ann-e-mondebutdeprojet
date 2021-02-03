@@ -7,18 +7,20 @@ public class enemyAI : MonoBehaviour{
     public Transform Target;
     public UnityEngine.AI.NavMeshAgent agent;
 
+
     // Start is called before the first frame update
     void Start()
     {
         agent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        Target = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        
-    agent.destination = Target.position;
+
+        agent.destination = Target.position;
         
         
     }

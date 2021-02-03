@@ -43,7 +43,7 @@ public class FPCSupport : MonoBehaviour
     public Transform itemPrefab;
     public Transform inventorySlots;
     public int slotCount = 16;
-    // Start is called before the first frame update
+    
     private bool holdingItem = false;
     private GameObject itemObjectold;
     private string itemTypeold;
@@ -58,10 +58,14 @@ public class FPCSupport : MonoBehaviour
     public string Fin;
     public bool finito=false;
 
+    
+
+    
+
 
     void Start()
     {
-
+       
 
         if (playerCam == null)
         {
@@ -101,10 +105,10 @@ public class FPCSupport : MonoBehaviour
             DialogueBox = GameObject.Find("DialogueBox");
 
         }
-        DialogueBox.SetActive(false); 
-        
-        
-    
+        DialogueBox.SetActive(false);
+
+         
+
     }
    
 
@@ -124,7 +128,7 @@ public void JeQuitteLeJeu()
     // Update is called once per frame
     void Update()
     {
-
+        
         if (Input.GetButtonDown(InventoryButton))
         {
             ShowOnHideInventory(); //fonction appeller à chaque fois qu'on appuis sur le bouton et qui va simplifier le travaille de recherche si l'inventaire est activé.
@@ -191,7 +195,9 @@ public void JeQuitteLeJeu()
             {
                 crosshairDisplay.GetComponent<Image>().sprite = defaulTexture;
             }
+            
         }
+        
     }
 
     
@@ -332,6 +338,9 @@ public void JeQuitteLeJeu()
         if (inventoryOn)
         {
             InventoryItemOptions.SetActive(false);
+            
+            
+            
             
         }
         //gere le curseur.
