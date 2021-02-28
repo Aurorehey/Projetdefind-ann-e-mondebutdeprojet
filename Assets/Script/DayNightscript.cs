@@ -15,5 +15,8 @@ public class DayNightscript : MonoBehaviour
     void Update()
     {
         sun.transform.Rotate(Vector3.right * speed * Time.deltaTime);
+
+
+
     }
 }
