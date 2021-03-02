@@ -1854,7 +1854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726182173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 512.4, y: 7.17, z: 105.29}
+  m_LocalPosition: {x: 512.4, y: 11.8, z: 100.3}
   m_LocalScale: {x: 15.452852, y: 22.744093, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11124,8 +11124,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5047456515843020951}
   m_LocalRotation: {x: 0.5006089, y: 0.50411624, z: -0.49935725, w: -0.49588296}
-  m_LocalPosition: {x: 0.05, y: 0, z: -0.01}
-  m_LocalScale: {x: 99.99999, y: 100, z: 99.99999}
+  m_LocalPosition: {x: -0.44824, y: -0.24592, z: -3.2761}
+  m_LocalScale: {x: 507.43677, y: 281.18307, z: 357.2202}
   m_Children:
   - {fileID: 1112151037}
   m_Father: {fileID: 2436169744448135604}
@@ -11281,8 +11281,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2436169744448135604}
-  - component: {fileID: 1699082608202503081}
-  - component: {fileID: 1699082608202503080}
   m_Layer: 0
   m_Name: Lampetorche
   m_TagString: Untagged
@@ -11290,35 +11288,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1699082608202503080
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699082608202503079}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &1699082608202503081
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699082608202503079}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1714155290876379540
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13446,8 +13415,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699082608202503079}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.049992383, y: 0.5500001, z: 1.1000061}
-  m_LocalScale: {x: 0.5780347, y: 0.5347595, z: 1}
+  m_LocalPosition: {x: 0.054367, y: 0.57791, z: 2.0361}
+  m_LocalScale: {x: 0.12915716, y: 0.07927368, z: 0.47758844}
   m_Children:
   - {fileID: 952583270231562714}
   m_Father: {fileID: 2120929303}
@@ -14079,6 +14048,8 @@ GameObject:
   - component: {fileID: 952583270231562714}
   - component: {fileID: 1714155290876379540}
   - component: {fileID: 1934385930201822250}
+  - component: {fileID: 5047456515843020952}
+  - component: {fileID: 5047456515843020953}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -14086,6 +14057,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &5047456515843020952
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5047456515843020951}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
+--- !u!136 &5047456515843020953
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5047456515843020951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0023311311
+  m_Height: 0.008638523
+  m_Direction: 1
+  m_Center: {x: -0.000099415105, y: -0.00315964, z: 0.00017659084}
 --- !u!23 &5420272118322320792
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14408,6 +14409,7 @@ GameObject:
   - component: {fileID: 6468574036480414054}
   - component: {fileID: 2370686815908117910}
   - component: {fileID: 2843352662534248184}
+  - component: {fileID: 6754820970383556869}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -14415,6 +14417,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &6754820970383556869
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754820970383556867}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6756668294301904165
 GameObject:
   m_ObjectHideFlags: 0
