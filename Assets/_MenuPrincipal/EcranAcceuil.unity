@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6870eaefd371b40924e545ce349ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapACharger: Game
+  MapACharger: "EcranDePr\xE9sentation"
 --- !u!1 &2101450028
 GameObject:
   m_ObjectHideFlags: 0

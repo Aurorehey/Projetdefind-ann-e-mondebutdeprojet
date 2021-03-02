@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Credits/Credits.unity
     guid: 7cc04a6262be93644b36c21e39720f84
+  - enabled: 1
+    path: "Assets/_EcranDePr\xE9sentation/EcranDePr\xE9sentation.unity"
+    guid: c35996de33edad841b4b4825be50fe3c
   - enabled: 0
     path: Assets/Scenes/EcranDeCinematique.unity
     guid: 997bfa6d4b78ef444abd2a4d6d3d5432
