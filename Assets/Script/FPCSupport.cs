@@ -56,7 +56,9 @@ public class FPCSupport : MonoBehaviour
     public GameObject DialogueBox;
 
     public string Fin;
-    public bool finito=false;
+    //public bool finito=false;
+
+    //public bool lampe = true; 
 
     
 
@@ -107,7 +109,7 @@ public class FPCSupport : MonoBehaviour
         }
         DialogueBox.SetActive(false);
 
-         
+       
 
     }
    
