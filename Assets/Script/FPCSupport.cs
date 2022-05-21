@@ -43,7 +43,7 @@ public class FPCSupport : MonoBehaviour
     public Transform itemPrefab;
     public Transform inventorySlots;
     public int slotCount = 16;
-    
+
     private bool holdingItem = false;
     private GameObject itemObjectold;
     private string itemTypeold;
@@ -60,14 +60,14 @@ public class FPCSupport : MonoBehaviour
 
     //public bool lampe = true; 
 
-    
 
-    
+
+
 
 
     void Start()
     {
-       
+
 
         if (playerCam == null)
         {
@@ -109,28 +109,28 @@ public class FPCSupport : MonoBehaviour
         }
         DialogueBox.SetActive(false);
 
-       
+
 
     }
-   
 
-//public void OnTriggerEnter(Collider other)
-//{
 
-//   JeQuitteLeJeu();
-//}
+    //public void OnTriggerEnter(Collider other)
+    //{
 
-public void JeQuitteLeJeu()
+    //   JeQuitteLeJeu();
+    //}
+
+    public void JeQuitteLeJeu()
     {
 
         SceneManager.LoadScene(Fin);
     }
 
-    
+
     // Update is called once per frame
     void Update()
     {
-        
+
         if (Input.GetButtonDown(InventoryButton))
         {
             ShowOnHideInventory(); //fonction appeller à chaque fois qu'on appuis sur le bouton et qui va simplifier le travaille de recherche si l'inventaire est activé.
@@ -140,17 +140,17 @@ public void JeQuitteLeJeu()
             }
         }
         //controler si on appuye sur inventoryButton.
-        
-        if (Input.GetButtonDown(InteractButton)&& !inventoryOn)
+
+        if (Input.GetButtonDown(InteractButton) && !inventoryOn)
         {
-         
+
             if (infoCoroutineIsRunning)
             {
                 infoDisplay.text = "";
                 infoCoroutineIsRunning = false;
             }
-        
-           
+
+
             if (holdingItem)
             {
                 TryToUse();
@@ -159,24 +159,24 @@ public void JeQuitteLeJeu()
             else
             {
                 TryToInteract();//lance la fonction TryToInteract.
-                
+
             }
-            
+
 
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
-            
+
         }
 
 
 
-       
 
 
 
-   
+
+
         if (!useSpecialTexture)
         {
             Ray ray = playerCam.GetComponent<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));//lancer un rayon devant le joueur de la distance pickupRnage si il y a pas un item devant lui.
@@ -197,12 +197,12 @@ public void JeQuitteLeJeu()
             {
                 crosshairDisplay.GetComponent<Image>().sprite = defaulTexture;
             }
-            
+
         }
-        
+
     }
 
-    
+
 
     void TryToInteract()
     {
@@ -214,7 +214,7 @@ public void JeQuitteLeJeu()
             objectInteract = hit.collider.gameObject;
             if (objectInteract.tag == ItemTag)
             {
-              
+
                 //pick up 
                 //verifier si l'inventaire est complet
                 if (inventorySlots.childCount == slotCount)
@@ -222,7 +222,7 @@ public void JeQuitteLeJeu()
                     //Debug.Log("L'inventaire est complet!");
                     infoDisplay.text = "Inventaire est complet!";
                     StartCoroutine(WaitAndEraseInfo());
-                    
+
                 }
 
                 //hoever
@@ -230,7 +230,7 @@ public void JeQuitteLeJeu()
                 {
                     //faire disparaitre  l'objet 
                     objectInteract.SetActive(false);
-                    
+
                     //integrer notre nouvelle item dans l'inventaire.
                     Transform newItem;
                     newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity) as Transform;//si on laisse comme ça le new item va apparaitre à une possition aléatoire.
@@ -239,20 +239,20 @@ public void JeQuitteLeJeu()
                     //telecharger les informations de slot à l'inventaire.
                     ItemSlots itemInventory = newItem.GetComponent<ItemSlots>();
                     ItemVariables itemScene = objectInteract.GetComponent<ItemVariables>();
-                    itemInventory.itemType=itemScene.itemType;
-                    itemInventory.itemID=itemScene.itemID;
-                    itemInventory.itemSprite= itemScene.itemSprite;
-                    itemInventory.itemDescription=itemScene.itemDescription;
-                    itemInventory.itemReutilisable=itemScene.itemReutilisable;
+                    itemInventory.itemType = itemScene.itemType;
+                    itemInventory.itemID = itemScene.itemID;
+                    itemInventory.itemSprite = itemScene.itemSprite;
+                    itemInventory.itemDescription = itemScene.itemDescription;
+                    itemInventory.itemReutilisable = itemScene.itemReutilisable;
                 }
 
             }
             if (objectInteract.tag == doActionTag)
             {
-                if(!objectInteract.GetComponent<DoAction>().needItem)
+                if (!objectInteract.GetComponent<DoAction>().needItem)
                 {
                     objectInteract.GetComponent<DoAction>().DoActionNow();
-                    
+
                 }
                 else
                 {
@@ -260,8 +260,8 @@ public void JeQuitteLeJeu()
                     infoDisplay.text = objectInteract.GetComponent<DoAction>().textwithoutItem;
                     StartCoroutine(WaitAndEraseInfo());
                 }
-               
-            }  
+
+            }
         }
     }
     void TryToUse()
@@ -280,11 +280,11 @@ public void JeQuitteLeJeu()
                     if (itemIDold == objectInteract.GetComponent<DoAction>().itemID || objectInteract.GetComponent<DoAction>().itemID == null)
                     {
                         // bon item(right item)
-                         objectInteract.GetComponent<DoAction>().DoActionNow();
+                        objectInteract.GetComponent<DoAction>().DoActionNow();
                         if (!itemReutilisableold)
                         {
                             Destroy(itemObjectold);
-                        }  
+                        }
                     }
                     else
                     {
@@ -299,11 +299,11 @@ public void JeQuitteLeJeu()
                     infoDisplay.text = "Vous ne pouvez pas utiliser cette objet ici!";
                     StartCoroutine(WaitAndEraseInfo());
                 }
-            }    
+            }
         }
         StopoldingItem();
     }
-    public void  YouAreoldingItem(GameObject itemObject,string itemType,string itemID,Sprite itemSprite,bool itemReutilisable)//type,ID,gameobject en lui mê qui est l'item.
+    public void YouAreoldingItem(GameObject itemObject, string itemType, string itemID, Sprite itemSprite, bool itemReutilisable)//type,ID,gameobject en lui mê qui est l'item.
     {
         holdingItem = true;//pourquoi si l'item est utilisé il faudra le detruire
         //quitter automatiquement l'inventaire.
@@ -332,18 +332,18 @@ public void JeQuitteLeJeu()
         //gere l'inventaire et le joueur.
         inventoryCanvas.SetActive(!inventoryOn);
         //DialogueBox.SetActive(inventoryOn);
-        
+
         blur.enabled = !inventoryOn;
         fpsComp.enabled = inventoryOn; //fonctionne de façon désinchroniser car il est true au debut et il deveindra false après.
-        // gere les options de l'inventaire je veux que quands l'inventaire s'eteind les options de l'inventaire aussi et pas l'inverse.
-        
+                                       // gere les options de l'inventaire je veux que quands l'inventaire s'eteind les options de l'inventaire aussi et pas l'inverse.
+
         if (inventoryOn)
         {
             InventoryItemOptions.SetActive(false);
-            
-            
-            
-            
+
+
+
+
         }
         //gere le curseur.
         Cursor.visible = !inventoryOn;
@@ -354,14 +354,14 @@ public void JeQuitteLeJeu()
         else { Cursor.lockState = CursorLockMode.None; }
         crosshairDisplay.SetActive(inventoryOn);
 
-       
+
 
 
         inventoryOn = !inventoryOn; //avec le ! cela veut dire que si inventoryOn est = a false alors il deviendra true et inversement.
 
 
     }
-   
+
     public void ActiviteItemOptions(GameObject itemSelected)
     {
         InventoryItemOptions.SetActive(true);
@@ -391,7 +391,7 @@ public void JeQuitteLeJeu()
             infoDisplay.text = "";
             infoCoroutineIsRunning = false;
         }
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -406,10 +406,10 @@ public void JeQuitteLeJeu()
         {
             DialogueBox.SetActive(true);
         }
-       
+
     }
 
-   
+
 
 
 }
