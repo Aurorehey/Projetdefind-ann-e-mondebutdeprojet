@@ -8,18 +8,18 @@ LightmapParameters:
   m_PrefabAsset: {fileID: 0}
   m_Name: New LightmapParameters
   serializedVersion: 3
-  resolution: 0.67
-  clusterResolution: 0.5
-  irradianceBudget: 63
-  irradianceQuality: 4096
-  backFaceTolerance: 0.152
+  resolution: 0.01
+  clusterResolution: 0.1
+  irradianceBudget: 32
+  irradianceQuality: 512
+  backFaceTolerance: 0
   isTransparent: 0
-  modellingTolerance: 0.01
+  modellingTolerance: 0
   systemTag: -1
   edgeStitching: 0
   blurRadius: 2
   directLightQuality: 64
-  antiAliasingSamples: 8
+  antiAliasingSamples: 1
   pushoff: 0.837
   bakedLightmapTag: -1
   limitLightmapCount: 0
